@@ -1,0 +1,97 @@
+{ "version"		: 1.0,
+  "size"		: [11,8],
+  "start"		: [5,0],
+  "offscreen"	: 2,
+  "lanes" 		: [
+		{"type":"grass"},
+		{
+			"type"   : "road",
+			"speed"  : 60, 
+			"objects": [
+				{
+					"type"    : "car1",
+					"position": 4
+				},
+				{ 
+					"type"    : "car5",
+					"position": 8
+				}
+			]
+		},
+		{
+			"type"   : "water",
+			"speed"  : 100, 
+			"objects": [
+				{ 
+					"type"    : "log3",
+					"position": 5
+				}
+			]
+		},
+		{
+			"type"   :"road",
+			"speed"  : -100, 
+			"objects": [
+				{ 
+					"type"    : "trailer1",
+					"position": 3
+				}
+			]
+		},
+		{
+			"type"	 :"water",
+			"speed"  : -100, 
+			"objects": [
+				{ 
+					"type"    : "log2",
+					"position": 4
+				},			
+				{ 
+					"type"    : "log2",
+					"position": 8
+				}			
+			]
+		},
+		{
+			"type"	 :"road",
+			"speed"  : 120, 
+			"objects": [
+				{ 
+					"type"    : "car6",
+					"position": 4
+				},
+				{ 
+					"type"    : "car4",
+					"position": 8
+				}			
+			]
+		},
+		{
+			"type"   : "water",
+			"speed"  : 150, 
+			"objects": [
+				{ 
+					"type"    : "log4",
+					"position": 3
+				}
+			]
+		},		
+		{
+			"type"   : "hedge",
+			"objects": [
+				{ 
+					"type"    : "exit",
+					"position": 2
+				},
+				{ 
+					"type"    : "exit",
+					"position": 5
+				},
+				{ 
+					"type"    : "exit",
+					"position": 8
+				}
+			]		
+		}
+	]
+}

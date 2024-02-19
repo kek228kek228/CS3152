@@ -1,0 +1,93 @@
+{ "version"		: 1.0,
+  "size"		: [11,10],
+  "start"		: [5,0],
+  "offscreen"	: 2,
+  "lanes" 		: [
+		{"type":"grass"},
+		{
+			"type"   : "hedge",
+			"objects": [
+				{ 
+					"type"    : "open",
+					"position": 2
+				},
+				{ 
+					"type"    : "exit",
+					"position": 5
+				},
+				{ 
+					"type"    : "exit",
+					"position": 8
+				}
+			]		
+		},
+		{"type":"grass"},
+		{
+			"type"   : "hedge",
+			"objects": [
+				{ 
+					"type"    : "open",
+					"position": 3
+				},
+				{ 
+					"type"    : "open",
+					"position": 7
+				}
+			]		
+		},
+		{"type":"grass"},
+		{
+			"type"   : "hedge",
+			"objects": [
+				{ 
+					"type"    : "exit",
+					"position": 2
+				},
+				{ 
+					"type"    : "open",
+					"position": 5
+				},
+				{ 
+					"type"    : "exit",
+					"position": 8
+				}
+			]		
+		},
+		{"type":"grass"},
+		{
+			"type"   : "hedge",
+			"objects": [
+				{ 
+					"type"    : "open",
+					"position": 3
+				},
+				{ 
+					"type"    : "exit",
+					"position": 5
+				},
+				{ 
+					"type"    : "open",
+					"position": 7
+				}
+			]		
+		},
+		{"type":"grass"},
+		{
+			"type"   : "hedge",
+			"objects": [
+				{ 
+					"type"    : "exit",
+					"position": 2
+				},
+				{ 
+					"type"    : "open",
+					"position": 5
+				},
+				{ 
+					"type"    : "exit",
+					"position": 8
+				}
+			]		
+		}
+	]
+}
