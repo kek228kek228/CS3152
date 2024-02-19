@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CS 3152 Lab1- Kevin Klaben \
+\
+1. Changing the foregroundFPS value modifies the number of frames per second at which the game updates the display. 5 FPS makes the games very jumpy whereas anything above 60 feels smooth.\
+\
+2. Using the checkInBounds method, the ships and photons are checked to ensure they will not pass outside the window size. The start screen looks a progressively worse as the window size varies further from 1280x720 however game play is not affected so long as the screen size is not too small to see anything. There appears to be no screen max or minimum size as the game starts up and runs at all sizes (negative, larger than monitor display size). I would say the. Best ratio is 1280x720 as this allows the start menu to not look distorted.\
+\
+3. To complete this task I modified the Drawship method to take an additional argument which is turn is used as the scaling factor when the master draw method is called. The red Ship used a scale of 2 whereas the blue ship uses a scale of 1 and thus, the red ship is much larger than the blue.\
+\
+4. The way that I accomplished wrap around was to modify the collisions of photons with the walls and ships with the walls and instead of bouncing off (Maintaining position but negative velocity), they are now moved to the opposite side of the screen (changing position maintaining velocity). Clipping is solved by drawing objects 9 times by wrapping the draw call in nested loops which iterates through and adds the width and height multiplied by (-1,0,1) allow ships to appear partially on each side in all wrap around scenarios.\
+\
+5. OPAQUE appears to ignore any color effects that were part of the draw call and apply black to any part of the original image which was empty previously to make a square, ADDITIVE appears to wash out color while leaving the alpha value as it was in the original image, and ALPHA_BLEND appears to properly apply the color values which were called as part of the draw method.\
+\
+6. I decided to implement the shots fading as they get older, this is don\'92t by fading the colors and alpha value down to zero gradually. This is down by applying a color tint which gradually decreases as a factor of the age of the photon such that all values of the color reach near zero around the time when the photon actually disappears. The value I used that looked smooth to me was tinting using a color with all four values as being equal to 1- (photon age*0.015/(MAX_AGE*0.02). I found that this worked best as this value would eventually reach 0.25 at max age which appears very faint whereas when it reached 0 at the end, the photons would be to faint to see at about 75% of their life span and it would appear that the ships were being hit by invisible photons at the end of the photon lifespan.\
+\
+7. This was accomplished by applying a stop() call before playing the sound for the blue ship, the red ship will play the full sound in all cases.\
+\
+8.To accomplish all the tasks of 8 I added a new draw method in game canvas that could take a factor of time as a part of the call. I used the time factor to create a smooth rotation of the background, tinted the background to be green, shifted the positioning, scaling and origin offset to allow the rotation to occur around a center point of the game window. These effects are done in the the new draw method that I created in GameCanvas.\
+\
+9.The red Ship was given a new type of photon, the red ships photon is much bigger than that of the blue ship, and it gradually accelerates as it ages increasing in velocity by 3% every frame.\
+\
+10. Photons were given a mass of 1 and collisions were handled very similarly to those of ship to ship.\
+\
+11. Mouse support was added for the red ship. I implemented it using a trackpad so I am not completely sure if it will feel particularly natural using a mouse but the values I used when implementing mouse support felt most natural after experimentation when using the trackpad.\
+\
+12. I decided to implement an addition type of photon that can be fired. This is a photon that can be fired once every second by each of the ships using the M key for the blue ship and the Z key for the red ship. This type of photon automatically targets the opposing players ship when it is fired but it is not homing.}
